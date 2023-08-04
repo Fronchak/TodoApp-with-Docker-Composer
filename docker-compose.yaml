@@ -1,0 +1,25 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    env_file:
+      - ./config/db.env
+    networks:
+      - my-app-todo-composer-network
+    volumes:
+      - my-todo-mysql-data:/var/lib/mysql
+  app:
+    depends_on:
+      - db
+    build: ./app
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - my-app-todo-composer-network
+
+networks:
+  my-app-todo-composer-network:
+
+volumes:
+  my-todo-mysql-data:

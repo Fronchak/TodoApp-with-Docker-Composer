@@ -1,0 +1,42 @@
+.body{
+    background-color: rgb(244, 244, 244);
+}
+
+.app-container {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 1em;
+}
+
+#todo-form input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#todo-form .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.todo-container {
+    box-shadow: rgb(204, 204, 204) 0px 0px 16px 0px;
+    color: rgb(33, 37, 41);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    border-radius: 5px;
+    border: 1px solid #FFF;
+    transition: 0.5s
+}
+
+.todo-container span {
+    flex: 1
+}
+
+.todo-container input {
+    border-color: rgb(33, 37, 41);
+}
+
+.todo-container:hover {
+    box-shadow: rgb(180, 180, 180) 0px 0px 16px 0px;
+}

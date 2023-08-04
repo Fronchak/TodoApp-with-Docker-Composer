@@ -1,0 +1,43 @@
+<div class="main-container">
+    <div class="app-container">
+        <div class="form-container">
+            <form class="d-flex" id="todo-form" method="post">
+                <input 
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id="name"
+                    placeholder="New item"
+                />
+                <button
+                    class="btn btn-success"
+                    type="submit"
+                >Add</button>
+            </form>
+            {{#if isEmpty}}
+                <p class="text-center mt-3">You don't have any todo register yet</p>
+            {{/if}}
+        </div>
+        <div class="todo-containers mt-3">
+            {{#each todos}}
+                <div class="todo-container p-3 mb-3 bg-white">
+                    <form class="d-flex align-items-center" method="post" action="/todos/update/{{this.id}}">
+                        <input 
+                            class="form-check-input mt-0" 
+                            type="checkbox"
+                            onchange="this.form.submit()" 
+                            {{#if this.isDone}}
+                                checked
+                            {{/if}}
+                        >
+                    </form>
+                    <span>{{this.name}}</span>
+                    <a href="/todos/delete/{{this.id}}">
+                        <i class="bi bi-trash3-fill text-danger"></i>
+                    </a>
+                    
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
